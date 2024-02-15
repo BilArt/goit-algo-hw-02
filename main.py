@@ -24,3 +24,24 @@ def generate_request():
             while True:
                 generate_request()
                 process_request()
+
+# Завдання 2: Перевірка на паліндром
+                
+def is_palidrome(s):
+    s = s.lower().replace(" ", "")
+    char_queue = deque(s)
+
+    while len(char_queue) > 1:
+        if char_queue.popleft() != char_queue.pop():
+            return False
+    return True
+
+# Приклади використання функції is_palindrome()
+print("////////////////////////////////")
+input_string_false = "Hi! Jeg hedder Artem!"
+print(input_string_false)
+print(is_palidrome(input_string_false))
+print("////////////////////////////////")
+input_string_true = "A man a plan a canal Panama"
+print(input_string_true)
+print(is_palidrome(input_string_true))
